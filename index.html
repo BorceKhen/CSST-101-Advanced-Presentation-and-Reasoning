@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Formspree for easy email functionality -->
 </head>
 <body>
     <!-- Navigation -->
@@ -48,6 +49,29 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="snow-breeze-bg">
+            <!-- 20 snowflakes for effect -->
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+        </div>
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">Hi, I'm <span class="highlight">Khen Borce</span></h1>
@@ -63,7 +87,7 @@
             </div>
             <div class="hero-image">
                 <div class="profile-placeholder">
-                    <i class="fas fa-user"></i>
+                    <img src="images/Sakura Cover.jpg" alt="Avatar" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
                 </div>
             </div>
         </div>
@@ -227,13 +251,13 @@
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/BorceKhen" target="_blank" rel="noopener" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/borce-ron-khen-b45182380/" target="_blank" rel="noopener" class="social-link"><i class="fab fa-linkedin"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" action="https://formspree.io/f/xkgvzvep" method="POST">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
@@ -259,6 +283,33 @@
         </div>
     </footer>
 
+    <!-- Curtain Overlay for Transitions -->
+    <div class="curtain-overlay"></div>
+
     <script src="script.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const snowContainer = document.querySelector('.snow-breeze-bg');
+    const snowflakeCount = 30;
+    for (let i = 0; i < snowflakeCount; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        // Random vertical position (top)
+        snowflake.style.top = Math.random() * 100 + '%';
+        // Random size
+        const size = Math.random() * 10 + 7;
+        snowflake.style.width = size + 'px';
+        snowflake.style.height = size + 'px';
+        // Random animation duration and delay
+        const duration = Math.random() * 4 + 6; // 6s to 10s
+        const delay = Math.random() * 8;
+        snowflake.style.animationDuration = duration + 's';
+        snowflake.style.animationDelay = delay + 's';
+        // Random opacity
+        snowflake.style.opacity = (Math.random() * 0.5 + 0.5).toString();
+        snowContainer.appendChild(snowflake);
+    }
+});
+</script>
 </body>
 </html>
